@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>APOD 2.0</title>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <nav class="navigation">
+            <div class="logo">
+                <img src="./assets/img/logo-white.png">
+            </div>
+
+            <ul class="menu">
+                <li class="menu-item">Apod</li>
+                <li class="menu-item">Sobre</li>
+                <li class="menu-item">Nasa</li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="formulario" onsubmit="request.requestApod(event)">
+        <form data-submit>
+            <div class="fomr-content">
+                <label for="">Selecione uma data</label>
+                <input id="date" type="date" data-formDate>
+                <input id="sub" type="submit">
+            </div>
+        </form>
+    </div>
+
+    <div id="content" data-updateApod>
+    </div>
+    
+    <script src="./app/model/ApodModel.js"></script>
+    <script src="./app/controller/ApodController.js"></script>
+    <script src="./app/helpers/Helper.js"></script>
+    <script src="./app/view/ApodView.js"></script>
+
+    <script>
+        let request = new ApodController();
+    </script>
+</body>
+
+</html>
